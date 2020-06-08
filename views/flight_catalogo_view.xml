@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_light_items_tree">
+            <field name="name">flight.catalogue.items</field>
+            <field name="model">flight.items</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_flight_items_form" model="ir.ui.view">
+            <field name="name">flight.catalogue.items</field>
+            <field name="model">flight.items</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="catalogo_id" options="{'no_create_edit': True, 'no_open': True,'no_create': True}" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="name" style="text-transform: uppercase;"/>
+                            <field name="descripcion" style="text-transform: uppercase;"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       
+
+        <record id="view_flight_items_search" model="ir.ui.view">
+            <field name="name">flight.catalogue.items</field>
+            <field name="model">flight.items</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <!--buscara por los campos que especifiquemos aqui-->
+                    <field name="name" />
+                    <field name="descripcion"/>
+
+                    <!--permite agrupar  por un criterio-->
+                    <group>
+                        <filter name="catalogo_id" string="Agrupar Catalogo" context="{'group_by': 'catalogo_id' }" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_flight_items">
+            <field name="name">ITEMS CATALOGO</field>
+            <field name="res_model">flight.items</field>
+            <field name="context" eval="{'search_default_catalogo_id':1}"></field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <menuitem name="Items Catalogo" id="menu_action_flight_items" parent="menu_flight_administration" action="action_flight_items" sequence="6"/>
+
+
+
+
+
+
+
+
+
+
+    </data>
+</odoo>

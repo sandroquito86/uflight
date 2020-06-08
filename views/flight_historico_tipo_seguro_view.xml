@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_historico_tree">
+            <field name="name">flight.aircraft.history.securitytype</field>
+            <field name="model">flight.aircraft.history.securitytype</field>
+            <field name="arch" type="xml">
+                <tree create="false">
+                    <field name="create_date" string="Fecha y Hora"/>
+                    <field name="create_uid" string="Usuario"/>
+                    <field name="tipo_seguro_id" />
+                    <field name="radiograma_seguro" />
+                    <field name="observacion_seguro" />
+                    <field name="equipamento_adicional" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- model.name form view -->
+        <!-- model.name form view -->
+
+
+
+
+
+        <record model="ir.actions.act_window" id="action_historico">
+            <field name="name">flight.aircraft.history.securitytype</field>
+            <field name="res_model">flight.aircraft.history.securitytype</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+
+
+    </data>
+</odoo>

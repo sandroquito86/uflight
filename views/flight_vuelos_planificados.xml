@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_flight_vuelos_planificados_tree">
+            <field name="name">flight.vuelos.planificados</field>
+            <field name="model">flight.vuelos.planificados</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="matricula"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_flight_vuelos_planificados_form" model="ir.ui.view">
+            <field name="name">flight.vuelos.planificados</field>
+            <field name="model">flight.vuelos.planificados</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="tipo_vuelo_id" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="aeronave_id" options="{'no_create_edit': True, 'no_open': True}"/>
+                                <field name="mision_planvuelo_ids" widget="many2many_tags"/>
+                                <field name="hora" context="{'default_catalogo_id': 11}"/>
+                                <field name="copiloto_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 2)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="ingeniero_vuelo_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 3)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="operador_electro_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 9)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="ruta_salida_id" />
+                                <field name="ruta_retorno_id" />
+                            </group>
+                            <group>
+                                <field name="matricula"/>
+                                <field name="fecha_vuelo"/>
+                                <field name="piloto_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 1)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="mecanico_ids" widget="many2many_tags" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 4)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="radarista_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 8)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="taco_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 7)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="operacion_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_flight_vuelos_planificados">
+            <field name="name">VUELOS PLANIFICADOS</field>
+            <field name="res_model">flight.vuelos.planificados</field>
+            <field name="context" eval="{'search_default_catalogo_id':1}"></field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+       
+
+
+
+
+
+
+
+
+
+    </data>
+</odoo>

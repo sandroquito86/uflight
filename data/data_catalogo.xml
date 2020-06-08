@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="catalogue_id1" model="flight.catalogue">
+            <field name="id">1</field>
+            <field name="name">TIPO AERONAVE</field>
+        </record>
+
+        <record id="catalogue_id2" model="flight.catalogue">
+            <field name="id">2</field>
+            <field name="name">MODELO</field>
+        </record>        
+
+        <record id="catalogue_id4" model="flight.catalogue">
+            <field name="id">3</field>
+            <field name="name">TIPO DE TURBINA</field>
+        </record>
+        
+        <record id="catalogue_id6" model="flight.catalogue">
+            <field name="id">4</field>
+            <field name="name">EQUIPOS DE NAVEGACIÓN</field>
+        </record>
+        <record id="catalogue_id7" model="flight.catalogue">
+            <field name="id">5</field>
+            <field name="name">EQUIPOS DE COMUNICACIÓN</field>
+        </record>
+        <record id="catalogue_id8" model="flight.catalogue">
+            <field name="id">6</field>
+            <field name="name">EQUIPOS DE DETECCIÓN</field>
+        </record>
+
+        <record id="catalogue_id9" model="flight.catalogue">
+            <field name="id">7</field>
+            <field name="name">ESTADO</field>
+        </record> 
+        <record id="catalogue_id10" model="flight.catalogue">
+            <field name="id">8</field>
+            <field name="name">TIPO DE SEGURO</field>
+        </record>
+        <record id="catalogue_id11" model="flight.catalogue">
+            <field name="id">9</field>
+            <field name="name">RESULTADO</field>
+        </record>
+        <record id="catalogue_id12" model="flight.catalogue">
+            <field name="id">10</field>
+            <field name="name">TIPO DE VUELO</field>
+        </record>
+        <record id="catalogue_id13" model="flight.catalogue">
+            <field name="id">11</field>
+            <field name="name">HORA</field>
+        </record>
+
+    </data>
+</odoo>

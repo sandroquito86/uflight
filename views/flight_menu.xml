@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+
+        <menuitem name="Vuelo" id="menu_flight"/>
+
+        <!-- MENU PRINCIPAL -->
+
+        <menuitem name="Reservaciones" id="menu_flight_reservations" parent="menu_flight"/>
+
+
+        <menuitem name="Vuelos" id="menu_flight_flight" parent="menu_flight"/>
+
+        <menuitem name="Registros" id="menu_flight_records" parent="menu_flight"/>
+
+        <menuitem name="Reportes" id="menu_flight_reports" parent="menu_flight"/>
+
+        <menuitem name="Administracion" id="menu_flight_administration" parent="menu_flight"/>
+
+      
+
+
+        <!-- SUBMENU  VUELOS-->
+       <!--
+         <menuitem name="Plan de vuelo consolidado" id="submenu_vuelos3" parent="menu_flight_flight" action=" action_flight_aircraft"/>
+        <menuitem name="Gestión de planificación provisional anual" id="submenu_vuelos4" parent="menu_flight_flight" action=" action_flight_aircraft"/>
+        <menuitem name="Ejecución de vuelos" id="submenu_vuelos5" parent="menu_flight_flight" action=" action_flight_aircraft"/>
+        <menuitem name="Ejecución de vuelos (Info Channel)" id="submenu_vuelos6" parent="menu_flight_flight" action=" action_flight_aircraft"/>
+        <menuitem name="Registro de vuelos en simuladores" id="submenu_vuelos7" parent="menu_flight_flight" action=" action_flight_aircraft"/>
+    -->
+
+
+        <!-- SUBMENU  REGISTRO-->
+
+
+
+
+
+
+       
+
+
+
+
+
+    </data>
+</odoo>

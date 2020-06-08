@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="view_flight_medical_record_tree">
+      <field name="name">flight.medical.record.form</field>
+      <field name="model">flight.medical.record</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="result_id"/>
+          <field name="date_report"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_flight_medical_record_form" model="ir.ui.view">
+      <field name="name">flight.medical.record.form</field>
+      <field name="model">flight.medical.record</field>
+      <field name="arch" type="xml">
+        <form string="NUEVO">
+          <sheet>
+            <group>
+              <group>
+                <field name="result_id"/>
+                 <field name="date_report"/>
+                  <field name="referent_document" style="text-transform: uppercase;"/>
+              </group>
+              <group>
+                <field name="observation" style="text-transform: uppercase;"/>
+                 <field name="hr_employee_id" />
+                  <field name="state" />
+
+              </group>
+            </group>
+            <group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <!--field name="limit">2</field-->
+    <record model="ir.actions.act_window" id="action_flight_medical_record">
+      <field name="name">Datos Ficha Medica</field>
+      <field name="res_model">flight.medical.record</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <menuitem name="Registro Medico" id="menu_flight_action_window" parent="menu_flight_records" action="action_flight_medical_record" sequence="1"/>
+
+
+
+    <!-- Top menu item -->
+
+
+
+  </data>
+</odoo>

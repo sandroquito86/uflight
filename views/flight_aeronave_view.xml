@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_flight_aircraft_tree">
+            <field name="name">flight.aircraft</field>
+            <field name="model">flight.aircraft</field>
+            <field name="arch" type="xml">
+                <tree >
+                    <field name="modelo_id" />
+                    <field name="name" />
+                    <field name="tipo_aeronave_id"/>
+                    <field name="tipo_seguro_id"/>
+
+                    <field name="fecha_adquisicion"/>
+                    <field name="estado" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_flight_aircraft_search" model="ir.ui.view">
+            <field name="name">flight.aircraft</field>
+            <field name="model">flight.aircraft</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <!--buscara por los campos que especifiquemos aqui-->
+                    <field name="name"/>
+                    <field name="tipo_aeronave_id"/>
+                    <field name="tipo_seguro_id"/>
+
+                    <field name="fecha_adquisicion"/>
+                    <field name="estado" invisible='1'/>
+                    <!--permite agrupar  por un criterio-->
+                    <group>
+                        <filter name="modelo_id" string="Modelo" context="{'group_by': 'modelo_id' }" />
+                        <filter name="tipo_aeronave_id" string="Aeronave" context="{'group_by': 'tipo_aeronave_id' }" />
+
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_flight_aircraft_form" model="ir.ui.view">
+            <field name="name">flight.aircraft</field>
+            <field name="model">flight.aircraft</field>
+            <field name="arch" type="xml">
+                <form string="testeando">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="history_open_security_type" type="object" class="oe_stat_button" icon="fa-book">
+                                <field name="contador_historico" string="Tipo Seguro" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <field name="estado"/>
+                        </group>
+                        <group colspan="3">
+                            <notebook >
+                                <page string="Aeronave">
+                                    <group>
+                                        <group>
+                                            <field name="name" style="text-transform: uppercase;"/>
+                                            <field name="tipo_aeronave_id" options="{'no_open': True}" context="{'default_catalogo_id': 1}"/>
+                                            <field name="modelo_id" options="{'no_open': True}" context="{'default_catalogo_id': 2}"/>
+                                            <field name="escuadron_id" options="{'no_open': True}" context="{'default_catalogo_id': 3}"/>
+                                            <field name="fecha_adquisicion" />
+                                            <field name="aeronavegabilidad" style="text-transform: uppercase;"/>
+                                            <field name="fabricante" style="text-transform: uppercase;"/>
+                                        </group>
+                                        <group>
+                                            <field name="anio_fabricacion" filter_domain="[('anio_fabricacion', '&gt;=', self)]"/>
+                                            <field name="envergadura" />
+                                            <field name="tipo_turbina_id" options="{'no_open': True}" context="{'default_catalogo_id': 3}"/>
+                                            <field name="potencia"/>
+                                            <field name="tipo_motor_id" options="{'no_open': True}" context="{'default_catalogo_id': 5}"/>
+                                            <field name="velocidad_maniobra"/>
+                                            <field name="longitud"/>
+                                            <field name="altura"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Mision">
+                                    <group>
+                                        <group>
+                                            <field name="mision_plan_vuelo_ids">
+                                                <tree editable="botton">
+                                                    <field name="mision_id" />
+                                                </tree>
+                                            </field>
+                                        </group>
+                                        <group>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Velocidad">
+                                    <group>
+                                        <group>
+                                            <field name="velocidad_economica"/>
+                                            <field name="crucero_rapido"/>
+                                        </group>
+                                        <group>
+                                            <field name="crucero_lento"/>
+                                            <field name="altura_maxima"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Equipos">
+                                    <group>
+                                        <group>
+                                            <field name="equipo_navegacion_ids" widget="many2many_tags"/>
+                                            <field name="equipo_comunicacion_ids" widget="many2many_tags"/>
+                                        </group>
+                                        <group>
+                                            <field name="equipo_deteccion_ids" widget="many2many_tags"/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Limitaciones">
+                                    <group>
+                                        <group>
+                                            <separator/>
+                                            <field name="num_maximo_carga" />
+                                            <separator/>
+                                            <field name="num_maximo_pasajeros" />
+                                            <separator/>
+                                            <field name="peso_max_pasajero" />
+                                        </group>
+                                        <group>
+                                            <separator/>
+                                            <field name="peso_tot_combustible" />
+                                            <separator/>
+                                            <field name="peso_max_despegue"/>
+                                            <separator/>
+                                        </group>
+                                    </group>
+                                </page>
+                                <page string="Seguro">
+                                    <group>
+                                        <field name="tipo_seguro_id" options="{'no_open': True}" context="{'default_catalogo_id': 8}"/>
+                                        <field name="cambio_radiograma" style="text-transform: uppercase;"/>
+                                        <field name="observacion_seguro" style="text-transform: uppercase;"/>
+                                        <field name="equip_adicional_ids" widget="many2many_tags" style="text-transform: uppercase;"/>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_flight_aircraft">
+            <field name="name">AERONAVES</field>
+            <field name="res_model">flight.aircraft</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem name="Aeronaves" id="menu_action_flight_aircraft" parent="menu_flight_records" action="action_flight_aircraft"/>
+    </data>
+</odoo>

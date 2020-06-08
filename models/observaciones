@@ -1,0 +1,18 @@
+ VISTA DESPUES DE ETIQUETA FORM
+ <div class="alert alert-success alert-dismissible" invisible="not context.get('show_message', False)">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">X</a>
+                        <strong>Success!</strong> Indicates a successful or positive action.
+                    </div>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="abrir_hijo" type="object" class="oe_stat_button" icon="fa-archive">
+                            
+                        </button>
+                    </div>
+
+  def abrir_hijo(self):  
+      return {"type": "ir.actions.act_window",
+        "res_model": "flight.mission", 
+        "views": [[False, "form"]],
+        "res_id": self._origin.id,
+        "target": "main","context": {'show_message': True},
+        }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="habilitacion01" model="flight.habilitaciones">
+            <field name="id">1</field>
+            <field name="name">Piloto</field>
+        </record>
+
+        <record id="habilitacion02" model="flight.habilitaciones">
+            <field name="id">2</field>
+            <field name="name">Copiloto</field>
+        </record>
+
+        <record id="habilitacion03" model="flight.habilitaciones">
+            <field name="id">3</field>
+            <field name="name">Ingeniero de Vuelo</field>
+        </record>
+        <record id="habilitacion04" model="flight.habilitaciones">
+            <field name="id">4</field>
+            <field name="name">Mecánico</field>
+        </record>
+        <record id="habilitacion05" model="flight.habilitaciones">
+            <field name="id">5</field>
+            <field name="name">Electrónico</field>
+        </record>
+        <record id="habilitacion06" model="flight.habilitaciones">
+            <field name="id">6</field>
+            <field name="name">Electricista</field>
+        </record>
+        <record id="habilitacion07" model="flight.habilitaciones">
+            <field name="id">7</field>
+            <field name="name">Taco</field>
+        </record>
+        <record id="habilitacion08" model="flight.habilitaciones">
+            <field name="id">8</field>
+            <field name="name">Radarista</field>
+        </record>
+        <record id="habilitacion09" model="flight.habilitaciones">
+            <field name="id">9</field>
+            <field name="name">Operador Electro-Optico</field>
+        </record>
+        <record id="habilitacion10" model="flight.habilitaciones">
+            <field name="id">10</field>
+            <field name="name">Piloto Instructor</field>
+        </record>
+
+
+    </data>
+</odoo>

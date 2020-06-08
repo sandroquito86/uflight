@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--TIPO AERONAVE ID 1-->
+        <record id="items_tipo_aeronave_1" model="flight.items">
+            <field name="name">AVION</field>
+            <field name="descripcion">AVION</field>
+            <field name="catalogo_id">1</field>
+        </record>
+        <record id="items_tipo_aeronave_2" model="flight.items">
+            <field name="name">HELICOPTERO</field>
+            <field name="descripcion">HELICOPTERO</field>
+            <field name="catalogo_id">1</field>
+        </record>
+        <record id="items_tipo_aeronave_3" model="flight.items">
+            <field name="name">UAV</field>
+            <field name="descripcion">UAV</field>
+            <field name="catalogo_id">1</field>
+        </record>
+        <!--TIPO MODELO ID 2-->
+        <record id="items_modelo_1" model="flight.items">
+            <field name="name">BELL-430</field>
+            <field name="descripcion">BELL-430</field>
+            <field name="catalogo_id">2</field>
+        </record>
+        <record id="items_modelo_2" model="flight.items">
+            <field name="name">BELL-230</field>
+            <field name="descripcion">BELL-230</field>
+            <field name="catalogo_id">2</field>
+        </record>
+        <record id="items_modelo_3" model="flight.items">
+            <field name="name">BELL-206</field>
+            <field name="descripcion">BELL-206</field>
+            <field name="catalogo_id">2</field>
+        </record>
+        <record id="items_modelo_4" model="flight.items">
+            <field name="name">S.K.A 300</field>
+            <field name="descripcion">S.K.A 300</field>
+            <field name="catalogo_id">2</field>
+        </record>
+        <record id="items_modelo_5" model="flight.items">
+            <field name="name">S.K.A-200</field>
+            <field name="descripcion">S.K.A-200</field>
+            <field name="catalogo_id">2</field>
+        </record>
+        <record id="items_modelo_6" model="flight.items">
+            <field name="name">CN 235</field>
+            <field name="descripcion">CN 235</field>
+            <field name="catalogo_id">2</field>
+        </record>
+        <record id="items_modelo_7" model="flight.items">
+            <field name="name">T35 B</field>
+            <field name="descripcion">T35 B</field>
+            <field name="catalogo_id">2</field>
+        </record>
+
+        <!--TIPO TURBINA ID 3-->
+        <record id="items_turbina_1" model="flight.items">
+            <field name="name">TURBINA 1</field>
+            <field name="descripcion">TIPO TURBINA 1</field>
+            <field name="catalogo_id">3</field>
+        </record>
+        <record id="items_turbina_2" model="flight.items">
+            <field name="name">TURBINA 2</field>
+            <field name="descripcion">TIPO TURBINA 2</field>
+            <field name="catalogo_id">3</field>
+        </record>
+        <record id="items_turbina_3" model="flight.items">
+            <field name="name">TURBINA 3</field>
+            <field name="descripcion">TIPO TURBINA 3</field>
+            <field name="catalogo_id">3</field>
+        </record>
+
+        <!--EQUIPOS DE NAVEGACION ID 4-->
+        <record id="items_equip_navegacion_1" model="flight.items">
+            <field name="name">TNL-16</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN TNL-16</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_2" model="flight.items">
+            <field name="name">ADF(TIPO KSA-806)</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN ADF(TIPO KSA-806)</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_3" model="flight.items">
+            <field name="name">DME(TIPO KDM-706)</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN DME(TIPO KDM-706)</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_4" model="flight.items">
+            <field name="name">GPS( TIPO KLN-90B)</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN GPS( TIPO KLN-90B)</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_5" model="flight.items">
+            <field name="name">TRANSPONDER(TIPO KDA-405)</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN TRANSPONDER(TIPO KDA-405)</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_6" model="flight.items">
+            <field name="name">ADF(TIPO KR-87)</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN ADF(TIPO KR-87)</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_7" model="flight.items">
+            <field name="name">2012 A 270-001 EC-101</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN 2012 A 270-001 EC-101</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_8" model="flight.items">
+            <field name="name">VOR(TIPO KNR-634A)</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN VOR(TIPO KNR-634A)</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_9" model="flight.items">
+            <field name="name">TRANSPONDER(TIPO IFF</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN TRANSPONDER(TIPO IFF)</field>
+            <field name="catalogo_id">4</field>
+        </record>
+        <record id="items_equip_navegacion_10" model="flight.items">
+            <field name="name">GPS (TIPO GPS-400W)</field>
+            <field name="descripcion">EQUIPO NAVEGACIÓN GPS (TIPO GPS-400W)</field>
+            <field name="catalogo_id">4</field>
+        </record>
+
+        <!--EQUIPOS DE COMUNICACION ID 5-->
+        <record id="items_equip_comunicacion_1" model="flight.items">
+            <field name="name">HF</field>
+            <field name="descripcion">EQUIPO DE COMUNICACIÓN HF</field>
+            <field name="catalogo_id">5</field>
+        </record>
+        <record id="items_equip_comunicacion_2" model="flight.items">
+            <field name="name">VHF-22B</field>
+            <field name="descripcion">EQUIPO DE COMUNICACIÓN VHF-22B</field>
+            <field name="catalogo_id">5</field>
+        </record>
+        <record id="items_equip_comunicacion_3" model="flight.items">
+            <field name="name">RADIO</field>
+            <field name="descripcion">EQUIPO DE COMUNICACIÓN RADIO</field>
+            <field name="catalogo_id">5</field>
+        </record>
+        <record id="items_equip_comunicacion_4" model="flight.items">
+            <field name="name">MICROFONOS</field>
+            <field name="descripcion">EQUIPO DE COMUNICACIÓN MICROFONO</field>
+            <field name="catalogo_id">5</field>
+        </record>
+        <record id="items_equip_comunicacion_5" model="flight.items">
+            <field name="name">GPS</field>
+            <field name="descripcion">EQUIPO DE COMUNICACIÓN GPS</field>
+            <field name="catalogo_id">5</field>
+        </record>
+
+        <!--EQUIPOS DE DETECCION ID 6-->
+        <record id="items_equip_deteccion_1" model="flight.items">
+            <field name="name">EQUIPO ELECTRO OPTICO(2175-09916-45)</field>
+            <field name="descripcion">ED ELECTRO OPTICO(2175-09916-45)</field>
+            <field name="catalogo_id">6</field>
+        </record>
+        <record id="items_equip_deteccion_2" model="flight.items">
+            <field name="name">RADAR DE EXPLORACION AEROMARITIMA (MPR) </field>
+            <field name="descripcion">ED RADAR DE EXPLORACION AEROMARITIMA (MPR)</field>
+            <field name="catalogo_id">6</field>
+        </record>
+
+        <record id="items_equip_deteccion_3" model="flight.items">
+            <field name="name">TIPO RADAR METEOROLOGICO RDR-2000</field>
+            <field name="descripcion">ED RADAR METEOROLOGICO RDR-2000</field>
+            <field name="catalogo_id">6</field>
+        </record>
+        <record id="items_equip_deteccion_4" model="flight.items">
+            <field name="name">TIPO RADAR METEOROLOGICO RDR-1500B</field>
+            <field name="descripcion">ED RADAR METEOROLOGICO RDR-1500B</field>
+            <field name="catalogo_id">6</field>
+        </record>
+        <record id="items_equip_deteccion_5" model="flight.items">
+            <field name="name">TIPO RADAR EXPLORACION RDR-1500B</field>
+            <field name="descripcion">ED RADAR EXPLORACION RDR-1500B</field>
+            <field name="catalogo_id">6</field>
+        </record>
+        <record id="items_equip_deteccion_6" model="flight.items">
+            <field name="name">TIPO RADAR METEREOLOGICO WXR-300</field>
+            <field name="descripcion">ED RADAR METEOROLOGICO WXR-300</field>
+            <field name="catalogo_id">6</field>
+        </record>
+        <record id="items_equip_deteccion_7" model="flight.items">
+            <field name="name">TIPO RADAR METEREOLOGICO WR-80</field>
+            <field name="descripcion">ED RADAR METEOROLOGICO WR-80</field>
+            <field name="catalogo_id">6</field>
+        </record>
+        <record id="items_equip_deteccion_8" model="flight.items">
+            <field name="name">TIPO RADAR METEREOLOGICO BENDIX-KING 2021A</field>
+            <field name="descripcion">ED RADAR METEOROLOGICO BENDIX-KING 2021A</field>
+            <field name="catalogo_id">6</field>
+        </record>
+        <record id="items_equip_deteccion_9" model="flight.items">
+            <field name="name">TIPO RADAR METEREOLOGICO RCA RT-4001 </field>
+            <field name="descripcion">ED RADAR METEOROLOGICO RCA RT-4001</field>
+            <field name="catalogo_id">6</field>
+        </record>
+        <record id="items_equip_deteccion_10" model="flight.items">
+            <field name="name">RADAR MPR (EXPLORACION AEROMARITIMA)-1022U400-001</field>
+            <field name="descripcion">ED RADAR MPR (EXPLORACION AEROMARITIMA)-1022U400-001</field>
+            <field name="catalogo_id">6</field>
+        </record>
+
+        <!--ESTADO ID 7-->
+        <record id="items_estado1" model="flight.items">
+            <field name="name">OPERATIVO</field>
+            <field name="descripcion">ESTADO AERONAVE OPERATIVO</field>
+            <field name="catalogo_id">7</field>
+        </record>
+        <record id="items_estado2" model="flight.items">
+            <field name="name">NO OPERATIVO</field>
+            <field name="descripcion">ESTADO AERONAVE NO OPERATIVO</field>
+            <field name="catalogo_id">7</field>
+        </record>
+        <record id="items_estado3" model="flight.items">
+            <field name="name">CON TORRETA</field>
+            <field name="descripcion">ESTADO AERONAVE CON TORRETA</field>
+            <field name="catalogo_id">7</field>
+        </record>
+
+        <!--TIPO DE SEGURO ID 8-->
+        <record id="items_tipo_seguro_1" model="flight.items">
+            <field name="name">SIN SEGURO</field>
+            <field name="descripcion">SIN SEGURO</field>
+            <field name="catalogo_id">8</field>
+        </record>
+        <record id="items_tipo_seguro_2" model="flight.items">
+            <field name="name">SEGURO EN VUELO</field>
+            <field name="descripcion">TIPO DE SEGURO COMPLETO</field>
+            <field name="catalogo_id">8</field>
+        </record>
+        <record id="items_tipo_seguro_3" model="flight.items">
+            <field name="name">SEGURO A TIERRA</field>
+            <field name="descripcion">SEGURO EN TIERRA</field>
+            <field name="catalogo_id">8</field>
+        </record>
+        <record id="items_tipo_seguro_4" model="flight.items">
+            <field name="name">SEGURO COMPLETO</field>
+            <field name="descripcion">SEGURO COMPLETO</field>
+            <field name="catalogo_id">8</field>
+        </record>
+        <record id="items_tipo_seguro_5" model="flight.items">
+            <field name="name">SEGURO COMPLETO CON TORRETA</field>
+            <field name="descripcion">SEGURO CON TORRETA</field>
+            <field name="catalogo_id">8</field>
+        </record>
+
+        <!--RESULTADO  9-->
+        <record id="items_resultado_1" model="flight.items">
+            <field name="name">APTO</field>
+            <field name="descripcion">APTO</field>
+            <field name="catalogo_id">9</field>
+        </record>
+        <record id="items_resultado_2" model="flight.items">
+            <field name="name">NO APTO</field>
+            <field name="descripcion">NO APTO</field>
+            <field name="catalogo_id">9</field>
+        </record>
+
+        <!--RESULTADO  10-->
+        <record id="items_vuelo_planificado_1" model="flight.items">
+            <field name="name">VUELO PLANIFICADO</field>
+            <field name="descripcion">VUELO PLANIFICADO</field>
+            <field name="catalogo_id">10</field>
+        </record>
+         <record id="items_vuelo_planificado_2" model="flight.items">
+            <field name="name">ORDEN DE VUELO</field>
+            <field name="descripcion">ORDEN DE VUELO</field>
+            <field name="catalogo_id">10</field>
+        </record>
+    </data>
+</odoo>

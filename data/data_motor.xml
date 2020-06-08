@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--TIPO MOTOR-->
+        <record id="tipo_motor_1" model="flight.tipos.motores">
+            <field name="name">ALLISON (CAE270577)</field>
+            <field name="modelo">250C 20J</field>
+        </record>
+        <record id="tipo_motor_2" model="flight.tipos.motores">
+            <field name="name">ALLISON (SERIE CAE270371)</field>
+            <field name="modelo">250C 20J</field>
+        </record>
+        <record id="tipo_motor_4" model="flight.tipos.motores">
+            <field name="name">ALLISON (SERIE CAE27O598)</field>
+            <field name="modelo">250C 20J</field>
+        </record>
+        <record id="tipo_motor_5" model="flight.tipos.motores">
+            <field name="name">ALLISON (SERIE CAE98219-CAE898221)</field>
+            <field name="modelo">250-C30 G/2</field>
+        </record>
+        <record id="tipo_motor_6" model="flight.tipos.motores">
+            <field name="name">GENERAL ELECTRIC</field>
+            <field name="modelo">(779C)</field>
+        </record>
+        <record id="tipo_motor_7" model="flight.tipos.motores">
+            <field name="name">GENERAL ELECTRIC(981017-981019)</field>
+            <field name="modelo">(CT7-9C3)</field>
+        </record>       
+        <record id="tipo_motor_9" model="flight.tipos.motores">
+            <field name="name">JABIRU </field>
+            <field name="modelo">2200</field>
+        </record>
+        <record id="tipo_motor_10" model="flight.tipos.motores">
+            <field name="name">LYCOMMING(L-28127-48A)</field>
+            <field name="modelo">I0-540-K1K5</field>
+        </record>
+        <record id="tipo_motor_11" model="flight.tipos.motores">
+            <field name="name">LYCOMMIN(GL-28137-48A)</field>
+            <field name="modelo">I0-540-K1K5</field>
+        </record>
+    </data>
+</odoo>

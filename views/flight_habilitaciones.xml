@@ -1,0 +1,58 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="view_flight_habilitaciones_tree">
+            <field name="name">flight.habilitaciones</field>
+            <field name="model">flight.habilitaciones</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>              
+                </tree>
+            </field>
+        </record>
+
+    <record id="view_flight_habilitaciones_form" model="ir.ui.view">
+      <field name="name">flight.habilitaciones</field>
+      <field name="model">flight.habilitaciones</field>
+      <field name="arch" type="xml">
+        <form string="NUEVO">
+          <sheet>
+            <group>
+              <group>
+                <field name="name" style="text-transform: uppercase;"/>                
+              </group>
+            </group>
+            <group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    
+
+
+    <!-- actions opening views on models -->
+    <!--field name="limit">2</field-->
+    <record model="ir.actions.act_window" id="action_flight_habilitaciones">
+      <field name="name">flight.habilitaciones</field>
+      <field name="res_model">flight.habilitaciones</field>      
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+     <menuitem name="Habilitaciones" id="menu_flight_habilitaciones" 
+     parent="menu_flight_administration" 
+     action="action_flight_habilitaciones" 
+     sequence="4"/>
+
+
+
+    <!-- Top menu item -->
+
+
+
+  </data>
+</odoo>

@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="view_flight_escuadron_tree">
+            <field name="name">flight.escuadron</field>
+            <field name="model">flight.escuadron</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="siglas"/>
+                    <field name="ciudad_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_flight_escuadron_form" model="ir.ui.view">
+            <field name="name">flight.escuadron.form</field>
+            <field name="model">flight.escuadron</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" style="text-transform: uppercase;"/>
+                                <field name="siglas" style="text-transform: uppercase;"/>
+                                <field name="ciudad_id"/>
+                            </group>
+                        </group>
+                        <group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <!--field name="limit">2</field-->
+        <record model="ir.actions.act_window" id="action_flight_escuadron">
+            <field name="name">ESCUADRONES</field>
+            <field name="res_model">flight.escuadron</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- server action to the one above -->
+        <menuitem name="Escuadron" id="menu_action_flight_escuadron" parent="menu_flight_administration" action="action_flight_escuadron" sequence="2" />
+
+    </data>
+</odoo>

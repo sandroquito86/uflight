@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mision01" model="flight.mission.class">
+            <field name="id">1</field>
+            <field name="name">ALERTA</field>
+        </record>
+        <record id="mision02" model="flight.mission.class">
+            <field name="id">2</field>
+            <field name="name">HVP-DV</field>
+        </record>
+        <record id="mision03" model="flight.mission.class">
+            <field name="id">3</field>
+            <field name="name">HET-DV1</field>
+        </record>
+        <record id="mision04" model="flight.mission.class">
+            <field name="id">4</field>
+            <field name="name">HET-DV2</field>
+        </record>
+        <record id="mision05" model="flight.mission.class">
+            <field name="id">5</field>
+            <field name="name">HAP-1</field>
+        </record>
+        <record id="mision06" model="flight.mission.class">
+            <field name="id">6</field>
+            <field name="name">HET-NC</field>
+        </record>
+        <record id="mision07" model="flight.mission.class">
+            <field name="id">7</field>
+            <field name="name">HET-NA</field>
+        </record>
+        <record id="mision08" model="flight.mission.class">
+            <field name="id">8</field>
+            <field name="name">HET-RI</field>
+        </record>
+    </data>
+</odoo>

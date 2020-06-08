@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ciudad1" model="flight.ciudad">
+            <field name="id">1</field>
+            <field name="name">GUAYAQUIL</field>
+        </record>
+
+        <record id="ciudad2" model="flight.ciudad">
+            <field name="id">2</field>
+            <field name="name">MANTA</field>
+        </record>
+
+        <record id="ciudad3" model="flight.ciudad">
+            <field name="id">3</field>
+            <field name="name">GALAPAGOS</field>
+        </record>
+        <record id="escuadron1" model="flight.escuadron">
+            <field name="name">COMANDO DE LA AVIACIÓN NAVAL</field>
+            <field name="siglas">COAVNA</field>
+            <field name="ciudad_id">1</field>
+        </record>
+        <record id="escuadron2" model="flight.escuadron">
+            <field name="name">ESCUADRON DE HELICOPTEROS</field>
+            <field name="siglas">ESCHEL</field>
+            <field name="ciudad_id">1</field>
+        </record>
+        <record id="escuadron3" model="flight.escuadron">
+            <field name="name">ESCUADRÓN UAV</field>
+            <field name="siglas">ESCUAV</field>
+            <field name="ciudad_id">2</field>
+        </record>
+        <record id="escuadron4" model="flight.escuadron">
+            <field name="name">ESCUELA DE AVIACIÓN NAVAL</field>
+            <field name="siglas">ESDEAV</field>
+            <field name="ciudad_id">2</field>
+        </record>
+        <record id="escuadron5" model="flight.escuadron">
+            <field name="name">ESTACIÓN AERONAVAL DEL MANTA</field>
+            <field name="siglas">ESANMA</field>
+            <field name="ciudad_id">2</field>
+        </record>
+        <record id="escuadron6" model="flight.escuadron">
+            <field name="name">ESCUADRON INSULAR</field>
+            <field name="siglas">ESCAIN</field>
+            <field name="ciudad_id">3</field>
+        </record>
+    </data>
+</odoo>

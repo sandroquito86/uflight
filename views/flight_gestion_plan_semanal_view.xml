@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="flight.list">
+      <field name="name">flight.gestion.plan.semanal</field>
+      <field name="model">flight.gestion.plan.semanal</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_fligrew_form" model="ir.ui.view">
+      <field name="name">flight.gestion.plan.semanal</field>
+      <field name="model">flight.gestion.plan.semanal</field>
+      <field name="arch" type="xml">
+        <form string="NUEVO">
+          <header>
+            <button name="action_retornar_activo" string="Retornar Activo" states='planificado' type="object" class="oe_highlight"/>
+            <button name="action_confirm_operador_reparto" string="Confirmar reparto" type="object" attrs="{'invisible': [('state', '!=', 'planificado'),('state', '!=', 'activo')]}" class="oe_highlight"/>
+            <button name="action_confirm_comandante_reparto" states='planificado' string="Confirmar Comandante" type="object" class="oe_highlight" />
+            <button name="action_confirm_operador_coavna" states='aprobado_reparto' string="Confir Operador Coavna" type="object" class="oe_highlight"/>
+            <button name="action_confirm_comandante_coavna" type="object" states='ope_coavna' string="comandante coavna" class="oe_highlight" />
+            <field name="state" widget="statusbar" statusbar_visible="activo,planificado,aprobado_reparto,ope_coavna,aprobado_coavna"/>
+          </header>
+          <sheet>
+            <group>
+              <group>
+                <field name="descripcion"/>
+                <field name="semana_plan_vuelo"/>
+              </group>
+              <group>
+                <field name="planificacion_culminada"/>
+                <field name="observacion_reparto"/>
+                <field name="observacion_coavna"/>
+              </group>
+            </group>
+            <group>
+              <field name="vuelosplanificados_ids">
+                <tree>
+                 <field name="tipo_vuelo_id"/>
+                 <field name="aeronave_id"/>
+                 <field name="fecha_vuelo"/>
+                 <field name="hora"/>
+                </tree>
+              </field>            
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+
+
+    <!-- actions opening views on models -->
+    <!--field name="limit">2</field-->
+    <record model="ir.actions.act_window" id="action_gestion_plan_semanal">
+      <field name="name">GESTIÓN PLAN DE VUELO SEMANAL</field>
+      <field name="res_model">flight.gestion.plan.semanal</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <menuitem name="Gestión de plan de vuelo semanal" id="submenu_gestion_plan_semanal" parent="menu_flight_flight" action="action_gestion_plan_semanal"/>
+
+
+
+
+    <!-- Top menu item -->
+
+
+
+  </data>
+</odoo>

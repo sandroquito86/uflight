@@ -1,0 +1,124 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="view_equipo_deteccion_tree">
+            <field name="name">flight.equipo.deteccion</field>
+            <field name="model">flight.equipo.deteccion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_equipos_deteccion_form" model="ir.ui.view">
+            <field name="name">flight.equipo.deteccion</field>
+            <field name="model">flight.equipo.deteccion</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group >
+                            <group >
+                                <field name="name" style="text-transform: uppercase;"/>
+                                <field name="descripcion" style="text-transform: uppercase;"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--field name="limit">2</field-->
+        <record model="ir.actions.act_window" id="action_equipo_deteccion">
+            <field name="name">EQUIPOS DE DETECCION</field>
+            <field name="res_model">flight.equipo.deteccion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- server action to the one above -->
+        <menuitem name="Equipos de Detección" id="menu_action_equipo_deteccion" parent="menu_flight_administration" action="action_equipo_deteccion" sequence="2" />
+
+
+        <record model="ir.ui.view" id="view_equipo_comunicacion_tree">
+            <field name="name">flight.equipo.comunicacion</field>
+            <field name="model">flight.equipo.comunicacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_equipos_comunicacion_form" model="ir.ui.view">
+            <field name="name">flight.equipo.comunicacion</field>
+            <field name="model">flight.equipo.comunicacion</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group >
+                            <group >
+                                <field name="name" style="text-transform: uppercase;"/>
+                                <field name="descripcion" style="text-transform: uppercase;"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--field name="limit">2</field-->
+        <record model="ir.actions.act_window" id="action_equipo_comunicacion">
+            <field name="name">EQUIPOS DE comunicacion</field>
+            <field name="res_model">flight.equipo.comunicacion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- server action to the one above -->
+        <menuitem name="Equipos de Comunicación" id="menu_action_equipo_comunicacion" parent="menu_flight_administration" action="action_equipo_comunicacion" sequence="2" />
+
+
+        <record model="ir.ui.view" id="view_equipo_navegacion_tree">
+            <field name="name">flight.equipo.navegacion</field>
+            <field name="model">flight.equipo.navegacion</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_equipos_navegacion_form" model="ir.ui.view">
+            <field name="name">flight.equipo.navegacion</field>
+            <field name="model">flight.equipo.navegacion</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group >
+                            <group >
+                                <field name="name" style="text-transform: uppercase;"/>
+                                <field name="descripcion" style="text-transform: uppercase;"/>
+                            </group>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--field name="limit">2</field-->
+        <record model="ir.actions.act_window" id="action_equipo_navegacion">
+            <field name="name">EQUIPOS DE navegacion</field>
+            <field name="res_model">flight.equipo.navegacion</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- server action to the one above -->
+        <menuitem name="Equipos de Navegación" id="menu_action_equipo_navegacion" parent="menu_flight_administration" action="action_equipo_navegacion" sequence="2" />
+
+    </data>
+</odoo> 
+ 
+ 
+ 

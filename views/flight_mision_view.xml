@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_flight_mission_tree">
+            <field name="name">flight.mission</field>
+            <field name="model">flight.mission</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="programa_entrenamiento" />
+                    <field name="tipo_mision_id"/>
+                    <field name="attachment_ids"/>
+                    <field name="estado" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_flight_mission_search" model="ir.ui.view">
+            <field name="name">flight.mission</field>
+            <field name="model">flight.mission</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <!--buscara por los campos que especifiquemos aqui-->
+                    <field name="name"/>
+                    <!--permite agrupar  por un criterio-->
+                    <group>
+                        <filter name="tipo_mision_id" string="Tipo de Misión" context="{'group_by': 'tipo_mision_id' }" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+
+        <record id="view_flight_mission_kanban" model="ir.ui.view">
+            <field name="name">flight.mission</field>
+            <field name="model">flight.mission</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="attachment_ids" widget="many2many_binary"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="attachment_ids" widget="many2many_binary" style="max-height: 45px;"/>
+                                    </strong>
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_flight_mission_form" model="ir.ui.view">
+            <field name="name">flight.mission</field>
+            <field name="model">flight.mission</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <group>
+                        <group>
+                            <field name="name" style="text-transform: uppercase;"/>
+                            <field name="tipo_mision_id"/>
+                        </group>
+                        <group>
+                            <field name="programa_entrenamiento" style="text-transform: uppercase;"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="attachment_ids" widget="many2many_binary" />
+                        <field name="estado"/>
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_flight_mission">
+            <field name="name">MISIONES</field>
+            <field name="res_model">flight.mission</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <menuitem name="Misiones" id="menu_action_flight_mission" parent="menu_flight_records" action="action_flight_mission"/>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--EQUIPOS ADICIONALES-->
+        <record id="tipo_equipos_adicionales_1" model="flight.addtional.equipment">
+            <field name="name">GRUA</field>
+            <field name="descripcion">EQUIPOS ADICIONALES GRUA</field>
+        </record>
+        
+       
+    </data>
+</odoo>
