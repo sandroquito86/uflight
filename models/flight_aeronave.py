@@ -132,10 +132,7 @@ class Aircraft(models.Model):
 
     peso_max_despegue = fields.Float(string='Peso máximo de despegue',required=True)  
 
-    tipo_seguro_id = fields.Many2one(
-        string='Tipo de Seguro', comodel_name='flight.items', ondelete='restrict',
-        domain="[('catalogo_id', '=', 8)]", required=True)
-
+  
     cambio_radiograma= fields.Char(
         string="Radiograma de Cambio de Seguro", required=True, size=70)
 
@@ -148,12 +145,9 @@ class Aircraft(models.Model):
         string='Equipos Adicionales', comodel_name='flight.addtional.equipment',
         relation='flight_additional_aircraft_rel', column1='aeronave_id',column2='adicional_id')   
     
-    
-   
-   
     tipo_seguro_id = fields.Many2one(
         string='Tipo de Seguro', comodel_name='flight.items', ondelete='restrict',
-        domain="[('catalogo_id', '=', 8)]" )
+        domain="[('catalogo_id', '=', 4)]" )
    
     #Abrimos la vista historico
     def history_open_security_type(self):        
@@ -233,7 +227,7 @@ class Aircraft(models.Model):
     
     @api.onchange('tipo_seguro_id')
     def _onchange_field2(self):          
-        if(int(self.tipo_seguro_id.catalogo_id)==8):        
+        if(int(self.tipo_seguro_id.catalogo_id)==4):        
             self.cambio_radiograma=""
             self.observacion_seguro=""            
         else:

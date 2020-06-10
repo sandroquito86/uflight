@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
         <record model="ir.ui.view" id="view_light_items_tree">
             <field name="name">flight.catalogue.items</field>
             <field name="model">flight.items</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-
                 </tree>
             </field>
         </record>
@@ -32,8 +30,25 @@
                 </form>
             </field>
         </record>
-
-       
+        <record id="view_flight_items_form2" model="ir.ui.view">
+            <field name="name">flight.catalogue.items</field>
+            <field name="model">flight.items</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="catalogo_id" options="{'no_create_edit': True, 'no_open': True,'no_create': True}" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="name" style="text-transform: uppercase;"/>
+                             <field name="descripcion" style="text-transform: uppercase;"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
         <record id="view_flight_items_search" model="ir.ui.view">
             <field name="name">flight.catalogue.items</field>
@@ -59,18 +74,15 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <record model="ir.actions.act_window" id="client_form_action1">
+            <field name="name">ITEMS CATALOGO</field>
+            <field name="res_model">flight.items</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_flight_items_form2"/>
 
+        </record>
 
         <menuitem name="Items Catalogo" id="menu_action_flight_items" parent="menu_flight_administration" action="action_flight_items" sequence="6"/>
-
-
-
-
-
-
-
-
-
-
+ 
     </data>
 </odoo>

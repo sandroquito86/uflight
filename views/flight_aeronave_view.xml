@@ -10,7 +10,6 @@
                     <field name="name" />
                     <field name="tipo_aeronave_id"/>
                     <field name="tipo_seguro_id"/>
-
                     <field name="fecha_adquisicion"/>
                     <field name="estado" />
                 </tree>
@@ -59,9 +58,10 @@
                                     <group>
                                         <group>
                                             <field name="name" style="text-transform: uppercase;"/>
-                                            <field name="tipo_aeronave_id" options="{'no_open': True}" context="{'default_catalogo_id': 1}"/>
-                                            <field name="modelo_id" options="{'no_open': True}" context="{'default_catalogo_id': 2}"/>
-                                            <field name="escuadron_id" options="{'no_open': True}" context="{'default_catalogo_id': 3}"/>
+                                            <field name="tipo_aeronave_id" options="{'no_open': True}" 
+                                            context="{'form_view_ref': 'flight.view_flight_items_form2', 'default_catalogo_id': 1}"/>
+                                            <field name="modelo_id" options="{'no_open': True}" context="{'form_view_ref': 'flight.view_flight_items_form2', 'default_catalogo_id': 2}"/>
+                                            <field name="escuadron_id" options="{'no_open': True}"/>
                                             <field name="fecha_adquisicion" />
                                             <field name="aeronavegabilidad" style="text-transform: uppercase;"/>
                                             <field name="fabricante" style="text-transform: uppercase;"/>
@@ -69,9 +69,9 @@
                                         <group>
                                             <field name="anio_fabricacion" filter_domain="[('anio_fabricacion', '&gt;=', self)]"/>
                                             <field name="envergadura" />
-                                            <field name="tipo_turbina_id" options="{'no_open': True}" context="{'default_catalogo_id': 3}"/>
+                                            <field name="tipo_turbina_id" options="{'no_open': True}" context="{'form_view_ref': 'flight.view_flight_items_form2', 'default_catalogo_id': 3}"/>
                                             <field name="potencia"/>
-                                            <field name="tipo_motor_id" options="{'no_open': True}" context="{'default_catalogo_id': 5}"/>
+                                            <field name="tipo_motor_id" options="{'no_open': True}"/>
                                             <field name="velocidad_maniobra"/>
                                             <field name="longitud"/>
                                             <field name="altura"/>
@@ -135,7 +135,7 @@
                                 </page>
                                 <page string="Seguro">
                                     <group>
-                                        <field name="tipo_seguro_id" options="{'no_open': True}" context="{'default_catalogo_id': 8}"/>
+                                        <field name="tipo_seguro_id" options="{'no_open': True}" context="{'form_view_ref': 'flight.view_flight_items_form2', 'default_catalogo_id': 6}"/>
                                         <field name="cambio_radiograma" style="text-transform: uppercase;"/>
                                         <field name="observacion_seguro" style="text-transform: uppercase;"/>
                                         <field name="equip_adicional_ids" widget="many2many_tags" style="text-transform: uppercase;"/>

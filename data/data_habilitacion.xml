@@ -3,45 +3,45 @@
     <data>
         <record id="habilitacion01" model="flight.habilitaciones">
             <field name="id">1</field>
-            <field name="name">Piloto</field>
+            <field name="name">PILOTO</field>
         </record>
 
         <record id="habilitacion02" model="flight.habilitaciones">
             <field name="id">2</field>
-            <field name="name">Copiloto</field>
+            <field name="name">COPILOTO</field>
         </record>
 
         <record id="habilitacion03" model="flight.habilitaciones">
             <field name="id">3</field>
-            <field name="name">Ingeniero de Vuelo</field>
+            <field name="name">IINGENIERO DE VUELO</field>
         </record>
         <record id="habilitacion04" model="flight.habilitaciones">
             <field name="id">4</field>
-            <field name="name">Mecánico</field>
+            <field name="name">MECÁNICO</field>
         </record>
         <record id="habilitacion05" model="flight.habilitaciones">
             <field name="id">5</field>
-            <field name="name">Electrónico</field>
+            <field name="name">ELECTRÓNICO</field>
         </record>
         <record id="habilitacion06" model="flight.habilitaciones">
             <field name="id">6</field>
-            <field name="name">Electricista</field>
+            <field name="name">ELECTRICISTA</field>
         </record>
         <record id="habilitacion07" model="flight.habilitaciones">
             <field name="id">7</field>
-            <field name="name">Taco</field>
+            <field name="name">TACO</field>
         </record>
         <record id="habilitacion08" model="flight.habilitaciones">
             <field name="id">8</field>
-            <field name="name">Radarista</field>
+            <field name="name">RADARISTA</field>
         </record>
         <record id="habilitacion09" model="flight.habilitaciones">
             <field name="id">9</field>
-            <field name="name">Operador Electro-Optico</field>
+            <field name="name">OPERADOR ELECTRO-ÓPTICO</field>
         </record>
         <record id="habilitacion10" model="flight.habilitaciones">
             <field name="id">10</field>
-            <field name="name">Piloto Instructor</field>
+            <field name="name">PILOTO INSTRUCTOR</field>
         </record>
 
 

@@ -30,8 +30,7 @@
         'data/data_mision.xml',  
         'data/data_habilitacion.xml',  
         'data/data_escuadron.xml',
-        'data/data_motor.xml',
-        'data/data_equipos_adicionales.xml',        
+        'data/data_motor.xml',              
         'views/flight_menu.xml',    
         'views/flight_registro_medico.xml',
         'views/templates.xml',
@@ -46,8 +45,7 @@
         'views/flight_habilitaciones.xml', 
         'views/flight_escuadron.xml', 
         'views/flight_tipos_motores.xml',
-        'views/flight_mision.xml',
-        'views/flight_equipos_adicionales.xml',
+        'views/flight_mision.xml',       
         'views/flight_equipos.xml',
         
          

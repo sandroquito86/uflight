@@ -13,7 +13,7 @@
         </record>
 
     <record id="view_flight_habilitaciones_form" model="ir.ui.view">
-      <field name="name">flight.habilitaciones</field>
+      <field name="name">flight.habilitaciones.form</field>
       <field name="model">flight.habilitaciones</field>
       <field name="arch" type="xml">
         <form string="NUEVO">

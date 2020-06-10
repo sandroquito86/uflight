@@ -16,6 +16,8 @@
 
         <menuitem name="Administracion" id="menu_flight_administration" parent="menu_flight"/>
 
+        <menuitem name="Equipos" id="menu_flight_administration_equipos" parent="menu_flight_administration"/>
+
       
 
 

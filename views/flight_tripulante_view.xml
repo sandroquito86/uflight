@@ -22,14 +22,27 @@
                 </xpath>
                 <xpath expr="//page[@name='hr_settings']" position="after">
                     <page string="Datos Ficha Médica">
-                        <field name="medical_record_ids">
-                            <tree create="false">
-                                <field name="result_id"/>
-                                <field name="date_report"/>
-                                <field name="observation"/>
-                            </tree>
-                        </field>
-
+                        <div class="row">
+                            <div class="col-md-6">
+                                <separator string="Historial"/>
+                                <field name="medical_record_ids" >
+                                    <tree create='false' editable='bottom' delete='false' limit="5">
+                                        <field name="result_id" readonly='1'/>
+                                        <field name="date_report" readonly='1'/>
+                                        <field name="observation" readonly='1'/>
+                                    </tree>
+                                </field>
+                            </div>
+                            <div class="col-md-6">
+                                <group>
+                                    <separator string="Ultima ficha médica"/>
+                                    <field name="crew_result_id"/>                                   
+                                    <field name="crew_date_report"/>                         
+                                    <field name="crew_referent_document"/>                                
+                                    <field name="crew_observation"/>
+                                </group>
+                            </div>
+                        </div>
                     </page>
                 </xpath>
 
