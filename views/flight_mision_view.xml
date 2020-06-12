@@ -65,7 +65,7 @@
                     <group>
                         <group>
                             <field name="name" style="text-transform: uppercase;"/>
-                            <field name="tipo_mision_id"/>
+                            <field name="tipo_mision_id" style="text-transform: uppercase;"/>
                         </group>
                         <group>
                             <field name="programa_entrenamiento" style="text-transform: uppercase;"/>

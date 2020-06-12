@@ -13,7 +13,7 @@
     </record>
 
     <record id="view_fligrew_form" model="ir.ui.view">
-      <field name="name">flight.gestion.plan.semanal</field>
+      <field name="name">flight.gestion.plan.semanal.form</field>
       <field name="model">flight.gestion.plan.semanal</field>
       <field name="arch" type="xml">
         <form string="NUEVO">
@@ -26,27 +26,37 @@
             <field name="state" widget="statusbar" statusbar_visible="activo,planificado,aprobado_reparto,ope_coavna,aprobado_coavna"/>
           </header>
           <sheet>
+            <div class="row">
+              <div class="col-md-12">
+                <group>
+                  <field name="vuelo_planificado" widget="radio" options="{'horizontal': true}" />
+                </group>
+              </div>
+            </div>
             <group>
               <group>
-                <field name="descripcion"/>
-                <field name="semana_plan_vuelo"/>
+                <field name="descripcion" style="text-transform: uppercase;"/>
+                <field name="fecha_inicial"/>
+                <field name="fecha_final"/>
               </group>
               <group>
-                <field name="planificacion_culminada"/>
-                <field name="observacion_reparto"/>
-                <field name="observacion_coavna"/>
+                <field name="observacion_reparto" style="text-transform: uppercase;"/>
+                <field name="observacion_coavna" style="text-transform: uppercase;"/>
               </group>
             </group>
-            <group>
+            <separator string="DETALLES DE VUELO"/>
               <field name="vuelosplanificados_ids">
                 <tree>
-                 <field name="tipo_vuelo_id"/>
-                 <field name="aeronave_id"/>
-                 <field name="fecha_vuelo"/>
-                 <field name="hora"/>
+                  <field name="hora"/>
+                  <field name="aeronave_id"/>
+                  <field name="piloto_id"/>
+                  <field name="copiloto_id"/>
+                  <field name="taco_id"/>
+                  <field name="mecanico_ids" widget="many2many_tags"/>
+                   <field name="mision_planvuelo_ids" widget="many2many_tags"/>
                 </tree>
-              </field>            
-            </group>
+              </field>
+            
           </sheet>
         </form>
       </field>

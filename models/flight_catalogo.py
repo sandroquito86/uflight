@@ -35,7 +35,7 @@ class Catalogue(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()
 
     @api.model
@@ -90,7 +90,7 @@ class Items(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()
     
     @api.model
@@ -118,7 +118,7 @@ class MisionClass(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()
 
     @api.model
@@ -167,7 +167,7 @@ class AdditionalEquipment(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()
 
     @api.model
@@ -209,7 +209,7 @@ class Habilitaciones(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()
 
     @api.model
@@ -238,6 +238,8 @@ class Habilitaciones(models.Model):
         if self.name.upper() in list_names:
             raise ValidationError("Ya existe un registro con el nombre: %s " % (self.name.upper()))
     
+
+
 class MisionPlanVuelo(models.Model):
     _name = 'flight.mision.planvuelo'
     _description = 'flight.mision.planvuelo'
@@ -269,7 +271,7 @@ class Escuadron(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()
         
 
@@ -309,7 +311,7 @@ class Ciudad(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()       
 
     @api.model
@@ -349,7 +351,7 @@ class TiposMotores(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()       
 
     @api.model
@@ -389,7 +391,7 @@ class EquipoDeteccion(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()       
 
     @api.model
@@ -429,7 +431,7 @@ class EquipoComunicacion(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():
-            if set(str(values.get(k))).difference(digits) and values.get(k):                
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
                 values[k] = values.pop(k).upper()       
 
     @api.model
@@ -469,7 +471,7 @@ class EquipoNavegacion(models.Model):
 
     def transformar_mayuscula(self,values):
         for k, v in values.items():            
-            if set(str(values.get(k))).difference(digits) and values.get(k):            
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):            
                 values[k] = values.pop(k).upper()       
 
     @api.model

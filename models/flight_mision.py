@@ -59,6 +59,25 @@ class Mission(models.Model):
                      self.attachment_ids.unlink() 
                      self.warning['message'] ="El nombre del archivo pdf tiene caracteres no validos!!"                              
          return {'warning': self.warning}
+
+   def transformar_mayuscula(self,values):
+      for k, v in values.items():
+         if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
+            values[k] = values.pop(k).upper()
+
+
+   @api.model
+   def create(self, values): 
+      self.transformar_mayuscula(values)     
+      result = super(Mission, self).create(values)   
+      return result   
+  
+   def write(self, values):  
+      self.transformar_mayuscula(values)         
+      result = super(Mission, self).write(values)   
+      return result
+   
+   
       
 
 

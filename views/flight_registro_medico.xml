@@ -17,18 +17,26 @@
       <field name="model">flight.medical.record</field>
       <field name="arch" type="xml">
         <form string="NUEVO">
+          <header>
+              <field name="state" widget="statusbar" statusbar_visible="ACTIVO,CADUCADO"/>
+          </header>
           <sheet>
+          <div style="float:right;">
+          <group>
+           <field name="date_report"/>
+           </group>
+          </div>
             <group>
               <group>
                 <field name="result_id" 
                 context="{'form_view_ref': 'flight.view_flight_items_form2', 'default_catalogo_id': 5}"/>
-                 <field name="date_report"/>
+                
                   <field name="referent_document" style="text-transform: uppercase;"/>
               </group>
               <group>
                 <field name="observation" style="text-transform: uppercase;"/>
                  <field name="hr_employee_id" />
-                  <field name="state" />
+                 
               </group>
             </group>
             <group>

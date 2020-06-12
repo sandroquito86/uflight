@@ -9,15 +9,20 @@ import datetime
 
 class GestionPlanSemanal(models.Model):
     _name = 'flight.gestion.plan.semanal'
-    _description = 'flight.gestion.plan.semanal'  
+    _description = 'flight.gestion.plan.semanal' 
+    _rec_name='descripcion' 
   
-
+    
+    vuelo_planificado = fields.Selection(
+        string='Vuelo Planificado',
+        selection=[('VUELO PLANIFICADO', 'VUELO PLANIFICADO'), ('ORDEN DE VUELO', 'ORDEN DE VUELO')]
+    )
+    
     descripcion = fields.Char(string='Descripción',size=80,required=True)
 
-    semana_plan_vuelo = fields.Date( string='Semana del plan de vuelo',size=80,required=True)    
-    
-    planificacion_culminada = fields.Boolean(string='Planificación culminada', default=False )
-    
+    fecha_inicial = fields.Date( string='Desde',required=True)        
+    fecha_final = fields.Date( string='Hasta',required=True)        
+       
     state = fields.Selection([
         ('activo', 'Activo'),
         ('planificado', 'Planificado'),
@@ -55,14 +60,30 @@ class GestionPlanSemanal(models.Model):
         
     def action_confirm_comandante_coavna(self):
         self.write({'state': 'aprobado_coavna'})
+
+    
+    def transformar_mayuscula(self,values):
+        for k, v in values.items():
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
+                values[k] = values.pop(k).upper()
+
+    @api.model
+    def create(self, values):
+        self.transformar_mayuscula(values)       
+        result = super(GestionPlanSemanal, self).create(values)    
+        return result
+
+    def write(self, values):  
+      self.transformar_mayuscula(values)         
+      result = super(GestionPlanSemanal, self).write(values)   
+      return result
+    
       
 
 class VuelosPlanificados(models.Model):
     _name = 'flight.vuelos.planificados'
     _description = 'flight.vuelos.planificados'
 
-    tipo_vuelo_id = fields.Many2one(
-        string='Tipo de vuelo', comodel_name='flight.items', ondelete='restrict', domain="[('catalogo_id', '=', 10)]",required=True)
     
     aeronave_id = fields.Many2one(
         string='Aeronaves',comodel_name='flight.aircraft',ondelete='restrict',required=True)
@@ -116,16 +137,29 @@ class VuelosPlanificados(models.Model):
     ruta_retorno_id = fields.Many2one(
         string='Ruta de retorno', comodel_name='flight.ciudad', ondelete='restrict',)
     
-    
-    
-    
     mecanico_ids = fields.Many2many(
         string='Mecánico',
         comodel_name='flight.qualification',
-        relation='vueloplanificado_habilitacion_rel',
+        relation='vuelo_planificado_mecanico_rel',
         column1='vueloplanificado_id',
-        column2='habilitacion_id',
-        
+        column2='mecanico_id',        
+    )
+
+
+    electricista_ids = fields.Many2many(
+        string='Electricista',
+        comodel_name='flight.qualification',
+        relation='vuelo_planificado_electricista_rel',
+        column1='vueloplanificado_id',
+        column2='electricista_id',        
+    )
+
+    electronico_ids = fields.Many2many(
+        string='Electrónico',
+        comodel_name='flight.qualification',
+        relation='vuelo_planificado_electronico_rel',
+        column1='vueloplanificado_id',
+        column2='electronico_id',        
     )
     
     

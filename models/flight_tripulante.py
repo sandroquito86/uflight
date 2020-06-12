@@ -4,6 +4,8 @@ _logger = logging.getLogger(__name__)
 from odoo import models, fields, api
 from string import ascii_letters, digits
 import string 
+import time
+import datetime
 
 class Tripulantes(models.Model):    
     _inherit = ['hr.employee']
@@ -18,13 +20,12 @@ class Tripulantes(models.Model):
 
     crew_degree = fields.Char(
       string='Grado del Tripulante',    
-      required=True    )
+      required=True )
  
     medical_record_ids = fields.One2many(
        string='Registro Medico',
        comodel_name='flight.medical.record',
-       inverse_name='hr_employee_id',  
-            
+       inverse_name='hr_employee_id',             
         )
    
     crew_result_id = fields.Many2one(
@@ -38,42 +39,52 @@ class Tripulantes(models.Model):
         )
    
     crew_date_report = fields.Date(
-       string='Fecha de Informe',
+        string='Fecha de Informe',
         related='medical_record_ids.date_report',
         readonly=False,
         store=True     
         )
 
     crew_referent_document = fields.Char(
-       string='Documento de Referencia',  
-       required=True,
-       size=70,        
-       related='medical_record_ids.referent_document',
+        string='Documento de Referencia',         
+        size=70,        
+        related='medical_record_ids.referent_document',
         readonly=False,
         store=True )
 
     crew_observation = fields.Char(
-       string='Observaciones',       
-       size=200,  
-       related='medical_record_ids.observation',
+        string='Observaciones',       
+        size=200,  
+        related='medical_record_ids.observation',
         readonly=False,
         store=True )
    
     crew_hr_employee_id = fields.Many2one(
-       string='Tripulantes',
-       comodel_name='hr.employee',
-       ondelete='restrict',       
-       required=True,    )
+        string='Tripulantes',
+        comodel_name='hr.employee',
+        ondelete='restrict',       
+        required=True,    )
     
     quatification_ids = fields.One2many(
-       string='Habilitaciones',
-       comodel_name='flight.qualification',
-       inverse_name='tripulante_id',
+        string='Habilitaciones',
+        comodel_name='flight.qualification',
+        inverse_name='tripulante_id',
     )
+
+    def transformar_mayuscula(self,values):
+        for k, v in values.items():
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):             
+                values[k] = values.pop(k).upper()
+               
 
     
 
-
+   
+    def write(self, values): 
+        #self.transformar_mayuscula(values)    
+        result = super(Tripulantes, self).write(values)    
+        return result    
+ 
 
 class MedicalRecord(models.Model):
     _name = 'flight.medical.record'
@@ -89,8 +100,8 @@ class MedicalRecord(models.Model):
             required=True    )
         
     date_report = fields.Date(
-        string='Fecha de Informe',
-           )
+        string='Fecha de Informe',default=fields.Date.context_today, readonly=1, store=True
+    )
 
     referent_document = fields.Char(
         string='Documento de Referencia',  
@@ -110,8 +121,7 @@ class MedicalRecord(models.Model):
     
     state = fields.Selection(
         string='Estado',
-        selection=[('ACTIVO', 'ACTIVO'), ('CADUCADO', 'CADUCADO')]
-    )
+        selection=[('ACTIVO', 'ACTIVO'), ('CADUCADO', 'CADUCADO')],default="ACTIVO" )
     
     warning = {
             'title': 'Advertancia!',
@@ -124,47 +134,22 @@ class MedicalRecord(models.Model):
             if(int(self.result_id.catalogo_id)!=5):
                 self.result_id=""
     
-    def transformar_mayuscula(self,values):
+    def transformar_mayuscula(self,values):        
         for k, v in values.items():
             if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):             
                 values[k] = values.pop(k).upper()   
-
-
+  
     @api.model
-    def create(self, values):        
-        self.transformar_mayuscula(values) 
-        result = super(MedicalRecord, self).create(values)        
-        hr_record= self.env['hr.employee'].browse(values['hr_employee_id'])        
-        domain=[('date_report','>',values['date_report'])]         
-        count_record= self.env['flight.medical.record'].search_count(domain)                                      
-        if count_record==0:                                                
-            hr_record.crew_result_id=values['result_id']
-            hr_record.crew_date_report=values['date_report']
-            hr_record.crew_referent_document=values['referent_document']
-            hr_record.crew_observation=values['observation']           
+    def create(self, values):  
+        self.transformar_mayuscula(values)     
+        result = super(MedicalRecord, self).create(values)       
         return result
-
     
    
-    def write(self, values):    
-        result = super(MedicalRecord, self).write(values)
-        self.transformar_mayuscula(values) 
-          
+    def write(self, values): 
+        self.transformar_mayuscula(values)     
+        result = super(MedicalRecord, self).write(values)                  
         return result
-    
-
-    
-    
-    
-    
-
-  
-    
-    
-    
-
-    
-  
     
 
 

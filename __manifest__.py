@@ -47,6 +47,8 @@
         'views/flight_tipos_motores.xml',
         'views/flight_mision.xml',       
         'views/flight_equipos.xml',
+        'views/flight_mision_planvuelo.xml',
+        
         
          
         

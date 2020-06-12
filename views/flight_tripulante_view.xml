@@ -37,9 +37,9 @@
                                 <group>
                                     <separator string="Ultima ficha médica"/>
                                     <field name="crew_result_id"/>                                   
-                                    <field name="crew_date_report"/>                         
-                                    <field name="crew_referent_document"/>                                
-                                    <field name="crew_observation"/>
+                                    <field name="crew_date_report" />                         
+                                    <field name="crew_referent_document" style="text-transform: uppercase;"/>                                
+                                    <field name="crew_observation" style="text-transform: uppercase;"/>
                                 </group>
                             </div>
                         </div>

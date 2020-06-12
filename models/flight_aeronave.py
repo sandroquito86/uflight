@@ -15,14 +15,11 @@ class Aircraft(models.Model):
         required=True, size=10, 
         help='Technical Field '
          )
-
     
     contador_historico = fields.Integer(
         string='Historico Tipo Seguro', compute="get_contador"
     )
 
-    
-    
     estado = fields.Boolean(
         string='Activar/Desactivar' ,
         default=True        
@@ -37,10 +34,7 @@ class Aircraft(models.Model):
         domain="[('catalogo_id', '=', 2)]", required=True)
     
     escuadron_id = fields.Many2one(
-        string='Escuadron',
-        comodel_name='flight.escuadron',
-        ondelete='restrict',
-    )    
+        string='Escuadron', comodel_name='flight.escuadron',ondelete='restrict',)    
 
     fecha_adquisicion = fields.Date(
         string='Fecha de Adquisición', required=True)
@@ -177,9 +171,14 @@ class Aircraft(models.Model):
         contar= self.env['flight.aircraft.history.securitytype'].search_count([('aeronave_id', '=', self.id)])
         self.contador_historico=contar
     
+    def transformar_mayuscula(self,values):
+        for k, v in values.items():
+            if set(str(values.get(k))).difference(digits) and values.get(k) and isinstance(values.get(k), str):                
+                values[k] = values.pop(k).upper()
     #Ingreso del historico
     @api.model
-    def create(self, values):  
+    def create(self, values): 
+        self.transformar_mayuscula(values) 
         result = super(Aircraft, self).create(values)
         listar=[]
         for item in result.equip_adicional_ids:
@@ -196,7 +195,8 @@ class Aircraft(models.Model):
     
    
     #actualizacion de historico
-    def write(self, values):        
+    def write(self, values): 
+        self.transformar_mayuscula(values)       
         result = super(Aircraft, self).write(values)
         if 'equip_adicional_ids' in values:
             listar=[]

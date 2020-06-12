@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--      
+        <record id="view_flight_mision_plan_vuelo_form" model="ir.ui.view">
+            <field name="name">flight.mision.planvuelo</field>
+            <field name="model">flight.mision.planvuelo</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="mision_id" options="{'no_create_edit': True, 'no_open': True,'no_create': True}" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="name" style="text-transform: uppercase;"/>
+                            <field name="descripcion" style="text-transform: uppercase;"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        -->
+        <record id="view_flight_mision_plan_vuelo_form" model="ir.ui.view">
+            <field name="name">flight.mision.planvuelo</field>
+            <field name="model">flight.mision.planvuelo</field>
+            <field name="arch" type="xml">
+                <form string="NUEVO">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="mision_id"/>
+                                <field name="aeronave_id" options="{'no_create_edit': True, 'no_open': True,'no_create': True}" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="action_flight_mision_plan_vuelo">
+            <field name="name">ITEMS CATALOGO</field>
+            <field name="res_model">flight.mision.planvuelo</field>
+            <field name="context" eval="{'search_default_catalogo_id':1}"></field>
+            <field name="view_mode">form</field>
+        </record>
+        <!--
+        <record model="ir.actions.act_window" id="client_form_action1">
+            <field name="name">ITEMS CATALOGO</field>
+            <field name="res_model">flight.mision.planvuelo</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_flight_mision_plan_vuelo_form2"/>
+
+        </record>
+        -->
+
+    </data>
+</odoo>

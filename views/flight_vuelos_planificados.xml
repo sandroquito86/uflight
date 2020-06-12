@@ -21,10 +21,9 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="tipo_vuelo_id" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
                                 <field name="aeronave_id" options="{'no_create_edit': True, 'no_open': True}"/>
-                                <field name="mision_planvuelo_ids" widget="many2many_tags"/>
-                                <field name="hora" context="{'default_catalogo_id': 11}"/>
+                                <field name="mision_planvuelo_ids" widget="many2many_tags" context="{'default_aeronave_id': aeronave_id }"/>
+                                <field name="hora" context="{'form_view_ref': 'flight.view_flight_items_form2', 'default_catalogo_id': 7}"/>
                                 <field name="copiloto_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 2)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
                                 <field name="ingeniero_vuelo_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 3)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
                                 <field name="operador_electro_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 9)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
@@ -36,6 +35,8 @@
                                 <field name="fecha_vuelo"/>
                                 <field name="piloto_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 1)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
                                 <field name="mecanico_ids" widget="many2many_tags" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 4)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="electricista_ids" widget="many2many_tags" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 6)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
+                                <field name="electronico_ids" widget="many2many_tags" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 5)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
                                 <field name="radarista_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 8)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
                                 <field name="taco_id" domain="[('aeronave_id', '=', aeronave_id),('habilitacion_id', '=', 7)]" options="{'no_create_edit': True, 'no_open': True,'no_create': True}"/>
                                 <field name="operacion_id" />

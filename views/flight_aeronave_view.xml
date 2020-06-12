@@ -78,6 +78,7 @@
                                         </group>
                                     </group>
                                 </page>
+                                  
                                 <page string="Mision">
                                     <group>
                                         <group>
@@ -86,6 +87,9 @@
                                                     <field name="mision_id" />
                                                 </tree>
                                             </field>
+                                        </group>
+                                        <group>
+                                            <field name="mision_plan_vuelo_ids" widget="many2many_tags"></field>
                                         </group>
                                         <group>
                                         </group>
